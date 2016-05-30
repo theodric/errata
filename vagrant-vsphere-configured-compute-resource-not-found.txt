@@ -4,7 +4,11 @@ https://github.com/nsidc/vagrant-vsphere
 http://www.vmtocloud.com/how-to-use-vagrant-to-deploy-containers-on-vsphere-with-vmware-photon/
 http://blog.broez.com/vagrant-vsphere-centos-7/
 
-...and so on does not result in a working configuration.
+...and so on does not result in a working configuration. Instead it results in this:
+
+Kallistei:photon-remote1 theodric$ vagrant up
+Bringing machine 'default' up with 'vsphere' provider...
+Configured compute resource not found
 
 Critically, what is missing is the need to specify the vsphere.data_center_name as well as the folder that the template is in, 
 using both the vsphere.template_name and vsphere.vm_base_path variables.
