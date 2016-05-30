@@ -1,0 +1,37 @@
+Following the documentation at https://github.com/nsidc/vagrant-vsphere, http://www.vmtocloud.com/how-to-use-vagrant-to-deploy-containers-on-vsphere-with-vmware-photon/, http://blog.broez.com/vagrant-vsphere-centos-7/, et al. does not result in a working configuration.
+
+Critically, what is missing is the need to specify the vsphere.data_center_name as well asl the folder that the template is in, using both the vsphere.template_name and vsphere.vm_base_path variables.
+
+What follows is a valid Vagrantfile:
+
+Vagrant.configure("2") do |config|  
+  config.vm.box = "vsphere-dummy"
+
+  config.vm.provider :vsphere do |vsphere|
+    # The vSphere host we're going to connect to
+    vsphere.host = 'vcenterserver.local'
+    vsphere.data_center_name = 'datacentername'
+
+   # The ESX host for the new VM
+    vsphere.compute_resource_name = 'esxihost.local'
+
+    # The resource pool for the new VM
+    vsphere.resource_pool_name = 'Vagrants'
+
+    # The template we're going to clone
+    vsphere.template_name = 'Templates/PhotonVagrant'
+    vsphere.vm_base_path = 'Templates'
+
+    # The name of the new machine
+    vsphere.name = 'Vagrant.MIPSGCC'
+
+    # vSphere login
+    vsphere.user = 'Administrator@vCenter.local'
+
+    # vSphere password
+    vsphere.password = 'lolnope'
+
+    # If you don't have SSL configured correctly, set this to 'true'
+    vsphere.insecure = true
+  end
+end  
