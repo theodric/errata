@@ -1,9 +1,7 @@
 Following the documentation at:
 
 https://github.com/nsidc/vagrant-vsphere
-
 http://www.vmtocloud.com/how-to-use-vagrant-to-deploy-containers-on-vsphere-with-vmware-photon/
-
 http://blog.broez.com/vagrant-vsphere-centos-7/
 
 ...and so on, does not result in a working configuration.
