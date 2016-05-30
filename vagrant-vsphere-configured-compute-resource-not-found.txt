@@ -4,7 +4,7 @@ https://github.com/nsidc/vagrant-vsphere
 http://www.vmtocloud.com/how-to-use-vagrant-to-deploy-containers-on-vsphere-with-vmware-photon/
 http://blog.broez.com/vagrant-vsphere-centos-7/
 
-...and so on does not result in a working configuration. Instead it results in this:
+...and so on does not result in a working configuration. Instead, it results in this:
 
 Kallistei:photon-remote1 theodric$ vagrant up
 Bringing machine 'default' up with 'vsphere' provider...
