@@ -25,7 +25,7 @@ no data in archive
 Error: Failed to install vendor ruby.
 Error: Failed to install vendor Ruby.
 
-Homebrew seems to be calling 'compress' to unpack a gzipped tarball. This strikes me as odd, 
+Homebrew seems to be calling 'compress' to unpack a gzipped tarball. This strikes me as a developer-induced error, 
 and since it's failing with a mismatched archive type, I think I'm right.
 
 Rather than trying to figure out where (in the impenetrable thicket of scripts that is Homebrew) 
