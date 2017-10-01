@@ -1,4 +1,6 @@
-As of 2017-10-01 there seems to be some strange issue with either the latest patchlevel of Yosemite (14F2511), Homebrew, or the combination. This affected both my existing, previously-working installation of Homebrew, as well as an attempt at a cleanup followed by a fresh install.
+As of 2017-10-01 there seems to be some strange issue with either the latest patchlevel of Yosemite (14F2511), 
+Homebrew, or the combination. This affected both my existing, previously-working installation of Homebrew, 
+as well as an attempt at a cleanup followed by a fresh install.
 
 The error will manifest as follows:
 
@@ -23,15 +25,18 @@ no data in archive
 Error: Failed to install vendor ruby.
 Error: Failed to install vendor Ruby.
 
-Homebrew seems to be calling 'compress' to unpack a gzipped tarball. This strikes me as odd, and since it's failing with a mismatched archive type, I think I'm right.
+Homebrew seems to be calling 'compress' to unpack a gzipped tarball. This strikes me as a developer-induced error, 
+and since it's failing with a mismatched archive type, I think I'm right.
 
-Rather than trying to figure out where (in the impenetrable thicket of scripts that is Homebrew) the problem lay, I took a brute-force approach:
+Rather than trying to figure out where (in the impenetrable thicket of scripts that is Homebrew) 
+the problem lay, I took a brute-force approach:
 
 cd /usr/bin
 mv compress compress.dis
 ln -s gunzip compress
 
-I then cleaned up and ran the Homebrew installation script again, which succeeded, albeit with noisy errors. Homebrew is nevertheless fully functional.
+I then cleaned up and ran the Homebrew installation script again, which succeeded, albeit with noisy errors.
+Homebrew is nevertheless fully functional.
 
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ==> This script will install:
