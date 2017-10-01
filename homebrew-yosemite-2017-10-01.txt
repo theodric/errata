@@ -52,14 +52,14 @@ Press RETURN to continue or any other key to abort
 ==> /usr/bin/sudo /bin/mkdir -p /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/opt /usr/local/sbin
 ==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/opt /usr/local/sbin
 ==> /usr/bin/sudo /bin/chmod 755 /usr/local/share/zsh /usr/local/share/zsh/site-functions
-==> /usr/bin/sudo /usr/sbin/chown jsharp /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/opt /usr/local/sbin
+==> /usr/bin/sudo /usr/sbin/chown theodric /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/opt /usr/local/sbin
 ==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/opt /usr/local/sbin
-==> /usr/bin/sudo /bin/mkdir -p /Users/jsharp/Library/Caches/Homebrew
-==> /usr/bin/sudo /bin/chmod g+rwx /Users/jsharp/Library/Caches/Homebrew
-==> /usr/bin/sudo /usr/sbin/chown jsharp /Users/jsharp/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/mkdir -p /Users/theodric/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/chmod g+rwx /Users/theodric/Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown theodric /Users/theodric/Library/Caches/Homebrew
 ==> /usr/bin/sudo /bin/mkdir -p /Library/Caches/Homebrew
 ==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-==> /usr/bin/sudo /usr/sbin/chown jsharp /Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown theodric /Library/Caches/Homebrew
 ==> Downloading and installing Homebrew...
 remote: Counting objects: 91449, done.
 remote: Total 91449 (delta 0), reused 1 (delta 0), pack-reused 91448
@@ -162,7 +162,7 @@ Resolving deltas: 100% (28/28), done.
 Checking connectivity... done.
 Tapped 4374 formulae (4,642 files, 11.9MB)
 ==> Cleaning up /Library/Caches/Homebrew...
-==> Migrating /Library/Caches/Homebrew to /Users/jsharp/Library/Caches/Homebrew...
+==> Migrating /Library/Caches/Homebrew to /Users/theodric/Library/Caches/Homebrew...
 ==> Deleting /Library/Caches/Homebrew...
 Already up-to-date.
 ==> Installation successful!
