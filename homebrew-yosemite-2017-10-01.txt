@@ -1,0 +1,36 @@
+As of 2017-10-01 there seems to be some strange issue with either the latest patchlevel of Yosemite (14F2511), Homebrew, or the combination. This affected both my existing, previously-working installation of Homebrew, as well as an attempt at a cleanup followed by a fresh install.
+
+The error will manifest as follows:
+
+~$ brew update
+Initialized empty Git repository in /usr/local/Homebrew/.git/
+remote: Counting objects: 1124, done.
+remote: Compressing objects: 100% (1033/1033), done.
+remote: Total 1124 (delta 116), reused 377 (delta 49), pack-reused 0
+Receiving objects: 100% (1124/1124), 1.21 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (116/116), done.
+From https://github.com/Homebrew/brew
+ * [new branch]      master     -> origin/master
+HEAD is now at 533ea9d Merge pull request #3252 from MikeMcQuaid/no-export-default-make
+To restore the stashed changes to /usr/local/Homebrew run:
+  'cd /usr/local/Homebrew && git stash pop'
+==> Downloading https://homebrew.bintray.com/bottles-portable/portable-ruby-2.3.3.leopard_64.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring portable-ruby-2.3.3.leopard_64.bottle.1.tar.gz
+compress: /dev/stdin: Inappropriate file type or format
+child returned status 1
+no data in archive
+Error: Failed to install vendor ruby.
+Error: Failed to install vendor Ruby.
+
+Homebrew seems to be calling 'compress' to unpack a gzipped tarball. This strikes me as odd, and since it's failing with a mismatched archive type, I think I'm right.
+
+Rather than trying to figure out where (in the impenetrable thicket of scripts that is Homebrew) the problem lay, I took a brute-force approach:
+
+cd /usr/bin
+mv compress compress.dis
+ln -s gunzip compress
+
+I then cleaned up and ran the Homebrew installation script again, which succeeded.
+
+I would suggest undoing the changes to 'compress' once you get Homebrew installed.
