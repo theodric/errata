@@ -4,6 +4,6 @@ The problem is that https://github.com/zealdocs/zeal.git does not contain all of
 
 https://github.com/zealdocs/zeal/tree/stable contains the necessary files, but if you try to clone the repo from the "Clone or download" button, it will simply clone the current master repo again. You must instead click that button, then "Download ZIP."
 
-Once you have unpacked the archive, you can follow the instructions in the first link to build the project. Optionally, you may also choose to clone *master* and then add these files in.
+Once you have unpacked the archive, you can follow the instructions in the first link to build the project. I have tried blindly merging all of the missing files with *master*, but this did not result in a working build. I have neither the expertise nor inclination to troubleshoot. *stable* seems to build and run fine.
 
 The instructions also specify an incorrect fully-qualified path to the *macdeployqt* tool. The correct path is the same as the fully-qualified path to qmake, namely */usr/local/Cellar/qt@5.5/5.5.1_1/bin/macdeployqt* as of the writing of this document.
