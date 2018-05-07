@@ -2,18 +2,18 @@
 
 macOS binary distributions of Bazel and TensorFlow assume CPU instructions that are not available in the old Core 2-era processors in the Mac Pro 1,1 and 2,1. To use TensorFlow natively in this environment, you're going to have to build it yourself.
 
-Step 0: Already have Homebrew on your system
+* Step 0: Already have Homebrew on your system
 
-Step 1: Install Python 3 from Homebrew
+* Step 1: Install Python 3 from Homebrew
 brew install python@3
 
-Step 2: Build Bazel, then put it somewhere sensical
+* Step 2: Build Bazel, then put it somewhere sensical
 https://docs.bazel.build/versions/master/install-compile-source.html
 
-Step 3: Build TensorFlow
+* Step 3: Build TensorFlow
 https://www.tensorflow.org/install/install_sources
 
-Step 4: Install the package, **specifying the correct version of grpcio.**
+* Step 4: Install the package, **specifying the correct version of grpcio.**
 
 `$ pip3 install grpcio==1.9.1 /tmp/tensorflow_pkg/tensorflow-1.8.0-cp36-cp36m-macosx_10_10_x86_64.whl`
 
