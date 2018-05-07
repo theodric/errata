@@ -5,12 +5,16 @@ macOS binary distributions of Bazel and TensorFlow assume CPU instructions that 
 * Step 0: Already have Homebrew on your system
 
 * Step 1: Install Python 3 from Homebrew
+```
 brew install python@3
+```
 
 * Step 2: Build Bazel, then put it somewhere sensical
+
 https://docs.bazel.build/versions/master/install-compile-source.html
 
 * Step 3: Build TensorFlow
+
 https://www.tensorflow.org/install/install_sources
 
 * Step 4: Install the package, **specifying the correct version of grpcio.**
