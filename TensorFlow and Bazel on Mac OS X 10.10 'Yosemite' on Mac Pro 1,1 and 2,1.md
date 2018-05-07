@@ -19,7 +19,7 @@ https://www.tensorflow.org/install/install_sources
 
 * Step 4: Install the package, **specifying the correct version of grpcio.**
 
-`$ pip3 install grpcio==1.9.1 /tmp/tensorflow_pkg/tensorflow-1.8.0-cp36-cp36m-macosx_10_10_x86_64.whl`
+`pip3 install grpcio==1.9.1 /tmp/tensorflow_pkg/tensorflow-1.8.0-cp36-cp36m-macosx_10_10_x86_64.whl`
 
 This WorksForMe™ as of date of publishing
 
