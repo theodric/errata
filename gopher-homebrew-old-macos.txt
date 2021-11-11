@@ -1,0 +1,6 @@
+See: https://github.com/mistydemeo/homebrew-formulae/commit/951c26d45b503643548a5d5d3b99c241305d93a5
+brew tap mistydemeo/formulae
+brew edit gopher
+delete "#{MacOS.sdk_path}" from lines 14-18, save and exit
+brew install gopher
+profit
