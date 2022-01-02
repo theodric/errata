@@ -30,7 +30,20 @@ echo 0000:04:00.0 > /sys/bus/pci/devices/0000\:04\:00.0/driver/unbind
 Then attach them to vfio with 
 echo 1b21 2142 > /sys/bus/pci/drivers/vfio-pci/new_id
 
-/sys/bus/pci/drivers/vfio-pci no longer exists, but appears to be have been replaced by /sys/bus/pci/drivers/virtio-pci
+/sys/bus/pci/drivers/vfio-pci is not present; /sys/bus/pci/drivers/virtio-pci is present
 
-thus 
-echo 1b21 2142 > /sys/bus/pci/drivers/virtio-pci/new_id
+per https://pve.proxmox.com/wiki/Pci_passthrough,
+
+To enable vfio, first enable IOMMU:
+append 'intel_iommu=on' to the kernel command line
+
+then enable vfio by dropping this into /etc/modules
+
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+
+Reboot, run `dmesg | grep -e DMAR -e IOMMU` and check for 'DMAR: IOMMU enabled'; if yes, check /sys/bus/pci/drivers for vfio-pci
+
+Worked For Me™ on Xeon L5640 Westmere EP/MacPro5,1 in Proxmox 7.1, 2022-01-02
