@@ -2,7 +2,7 @@ Updating thenickdude / KVM-Opencore https://github.com/thenickdude/KVM-Opencore 
 
 Don't bother trying to rebuild it. The build system is incredibly fragile and is even broken by default.
 
-Download the iso (not an ISO, but a hard disk image) and mount it:
+Download the iso (not an ISO, but a hard disk image) and mount it, make your changes, umount it, and use it.
 
 1. Determine FS layout and start block
 
