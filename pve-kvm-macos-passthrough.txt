@@ -35,9 +35,9 @@ echo 1b21 2142 > /sys/bus/pci/drivers/vfio-pci/new_id
 per https://pve.proxmox.com/wiki/Pci_passthrough,
 
 To enable vfio, first enable IOMMU:
-append 'intel_iommu=on' to the kernel command line
+append 'intel_iommu=on' to the kernel command line (in /etc/default/grub)
 
-then enable vfio by dropping this into /etc/modules
+then enable vfio by dropping the following 4 lines into /etc/modules
 
 vfio
 vfio_iommu_type1
