@@ -1,0 +1,39 @@
+Updating https://github.com/thenickdude/KVM-Opencore to latest build of OpenCore + patching plist
+
+Don't bother trying to rebuild it. The build system is incredibly fragile and is even broken by default.
+
+Download the iso (not an ISO, but a hard disk image) and mount it:
+
+1. Determine FS layout and start block
+
+root@Kallistei:/usr/src# fdisk -l OpenCore-v15.iso
+Disk OpenCore-v15.iso: 150 MiB, 157286400 bytes, 307200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: BFD1533A-B3E7-4ACB-B1B6-D50204C5D0F6
+
+Device            Start    End Sectors  Size Type
+OpenCore-v15.iso1    40 307159  307120  150M EFI System
+
+
+2. Calculate offset == start block * sector size
+
+In this case, it's 40 * 512 == 20480
+
+
+3. Mount the image with the calculated offset:
+
+root@Kallistei:/usr/src# mount -o loop,offset=20480 OpenCore-v15.iso temp/
+
+
+4. Enter mounted loop fs at specified mount directory and perform any required changes
+
+
+5. Exit directory and unmount loop fs normally
+
+
+6. Do your thing
+
+
