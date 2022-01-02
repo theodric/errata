@@ -1,0 +1,23 @@
+This is probably obvious, but it is non-obvious to people who have not done it before:
+
+per https://www.nicksherlock.com/2018/11/my-macos-vm-proxmox-setup/ and especially section "hookscript" you need to figure out both the PCI IDs and PCI bus locations of the devices you wish to pass through.
+
+The format of PCI address in `lspci` corresponds to device files in /sys as follows:
+
+04:00.0 == 0000:04:00.0
+
+root@Ymir:/sys/bus/pci/devices# lspci -nn | grep -i ASM
+04:00.0 USB controller [0c03]: ASMedia Technology Inc. ASM2142 USB 3.1 Host Controller [1b21:2142]
+
+This can be validated as follows:
+
+root@Ymir:/sys/bus/pci/devices# cd 0000\:04\:00.0
+root@Ymir:/sys/bus/pci/devices/0000:04:00.0# cat uevent
+DRIVER=xhci_hcd
+PCI_CLASS=C0330
+PCI_ID=1B21:2142
+PCI_SUBSYS_ID=1B21:2142
+PCI_SLOT_NAME=0000:04:00.0
+MODALIAS=pci:v00001B21d00002142sv00001B21sd00002142bc0Csc03i30
+
+Match the PCI_SUBSYS_ID to the PCI subsystem ID presented by `lspci`
