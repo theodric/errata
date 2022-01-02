@@ -24,7 +24,7 @@ Match the PCI_SUBSYS_ID inside the `uevent` file to the PCI subsystem ID present
 
 ADDITIONALLY:
 
-The 'hookscript' says to unbind the device with
+The 'hookscript' (manually create in /var/lib/vz/snippets/hackintosh.sh) says to unbind the device with
 echo 0000:04:00.0 > /sys/bus/pci/devices/0000\:04\:00.0/driver/unbind
 
 Then attach them to vfio with 
