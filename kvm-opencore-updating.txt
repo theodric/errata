@@ -30,6 +30,8 @@ root@Kallistei:/usr/src# mount -o loop,offset=20480 OpenCore-v15.iso temp/
 
 4. Enter mounted loop fs at specified mount directory and perform any required changes
 
+cf. https://dortania.github.io/OpenCore-Post-Install/universal/update.html
+
 
 5. Exit directory and unmount loop fs normally
 
