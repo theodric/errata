@@ -1,0 +1,6 @@
+Source: https://forums.macrumors.com/threads/not-a-valid-volume-mount-point-cant-make-bootable-drive.1935673/page-3
+
+I've solved the reissued Sierra installer issue. The original installer's version is 12.6.03, while the reissued installer is version 12.6.06. It turns out that to get the reissued installer working, all you have to do is open its Info.plist file and change the value for CFBundleShortVersionString from 12.6.06 to 12.6.03. This can be done with a single command using plutil:
+Code:
+
+sudo plutil -replace CFBundleShortVersionString -string "12.6.03" /Applications/Install\ macOS\ Sierra.app/Contents/Info.plist
