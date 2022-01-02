@@ -1,4 +1,4 @@
-Updating  thenickdude / KVM-Opencore https://github.com/thenickdude/KVM-Opencore to latest build of OpenCore + patching plist
+Updating thenickdude / KVM-Opencore https://github.com/thenickdude/KVM-Opencore to latest build of OpenCore + patching plist
 
 Don't bother trying to rebuild it. The build system is incredibly fragile and is even broken by default.
 
