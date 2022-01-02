@@ -30,7 +30,7 @@ echo 0000:04:00.0 > /sys/bus/pci/devices/0000\:04\:00.0/driver/unbind
 Then attach them to vfio with 
 echo 1b21 2142 > /sys/bus/pci/drivers/vfio-pci/new_id
 
-/sys/bus/pci/drivers/vfio-pci is not present by default; /sys/bus/pci/drivers/virtio-pci is present. Don't be misled-- they are not equivalent!
+/sys/bus/pci/drivers/vfio-pci is *not* present by default; /sys/bus/pci/drivers/virtio-pci is present by default. Don't be misled-- they are not equivalent!
 
 per https://pve.proxmox.com/wiki/Pci_passthrough,
 
