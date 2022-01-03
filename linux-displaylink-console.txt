@@ -1,0 +1,5 @@
+in /etc/default/grub or your preferred kernel commandline holder, append 'fbcon=map:1'
+
+potentially also put 'udl' in /etc/modules
+potentially also put 'options udlfb console=1' and maybe also 'defio=1' into /etc/modprobe.d/displaylink.conf
+you could also put 'blacklist udlfb' into /etc/modprobe.d/blacklist.conf but it doesn't seem to be necessary
