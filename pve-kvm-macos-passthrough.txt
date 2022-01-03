@@ -47,3 +47,6 @@ vfio_virqfd
 Reboot, run `dmesg | grep -e DMAR -e IOMMU` and check for 'DMAR: IOMMU enabled'; if yes, check /sys/bus/pci/drivers for vfio-pci
 
 Worked For Me™ on Xeon L5640 Westmere EP/MacPro5,1 in Proxmox 7.1, 2022-01-02
+
+For BAR errors, see also: https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#%22BAR_3:_cannot_reserve_[mem]%22_error_in_dmesg_after_starting_VM
+and https://old.reddit.com/r/Proxmox/comments/ku6eof/gpu_passthrough_troubleshooting_constant_bar_0/
