@@ -52,3 +52,10 @@ For BAR errors, see also: https://wiki.archlinux.org/title/PCI_passthrough_via_O
 and https://old.reddit.com/r/Proxmox/comments/ku6eof/gpu_passthrough_troubleshooting_constant_bar_0/
 
 See also https://forum.proxmox.com/threads/gpu-passthrough-tutorial-reference.34303/ for a nice, concise summary
+
+
+--
+
+For some dumb fucking reason, I don't get any output on the GPU *AND* the VM never finishes booting unless I leave an emulated graphics adapter attached to the VM, irrespective of x-vga=on or x-vga=1 being set.
+My current hackaround for this was to boot with the stupid emulated graphics adapter, VNC in (having enabled this before since it's faster than Proxmox's noVNC), set the GPU's monitor as the primary.
+Then I run https://github.com/epalzeolithe/DisableMonitor-3.0 (https://github.com/Eun/DisableMonitor) once and "disable" the emulated device, which gives me full access to native resolutions on my attached DVI 1600x1200 Dell 2007FP monitor. (Setting mirroring did not grant me this full access since the virtual device is pegged at a horizontal resolution lower than 1200, namely 1080).
